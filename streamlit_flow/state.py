@@ -27,3 +27,7 @@ class StreamlitFlowState:
             'selected_id': self.selected_id,
             'timestamp': self.timestamp
         }
+
+    def get_node_by_id(self, node_id: str) -> StreamlitFlowNode:
+        """Get the node corresponding to the given id."""
+        return next((node for node in self.nodes if node.id == node_id), None)
