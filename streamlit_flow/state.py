@@ -1,7 +1,9 @@
 from dataclasses import dataclass, field
-from .elements import StreamlitFlowNode, StreamlitFlowEdge
-from typing import List
 from datetime import datetime
+from typing import List
+
+from .elements import StreamlitFlowEdge, StreamlitFlowNode
+
 
 @dataclass
 class StreamlitFlowState:
@@ -22,12 +24,8 @@ class StreamlitFlowState:
 
     def asdict(self):
         return {
-            'nodes': [node.asdict() for node in self.nodes],
-            'edges': [edge.asdict() for edge in self.edges],
-            'selected_id': self.selected_id,
-            'timestamp': self.timestamp
+            "nodes": [node.asdict() for node in self.nodes],
+            "edges": [edge.asdict() for edge in self.edges],
+            "selected_id": self.selected_id,
+            "timestamp": self.timestamp,
         }
-
-    def get_node_by_id(self, node_id: str) -> StreamlitFlowNode:
-        """Get the node corresponding to the given id."""
-        return next((node for node in self.nodes if node.id == node_id), None)

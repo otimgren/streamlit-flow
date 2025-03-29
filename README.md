@@ -61,7 +61,7 @@ streamlit run example.py
 
 ### Version 1.5.0
 
-> [!WARNING] 
+> [!WARNING]
 >
 > StreamlitFlow v1.5.0 has breaking changes. Please read on to understand how to migrate your code to the new version.
 
